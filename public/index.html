@@ -10,6 +10,16 @@
   </head>
   <body>
     <div id="app">
+      <h2>Currency data loaded...</h2>
+      <p>Base Currency: {{ currencies.base }}</p>
+      <p>Active date: {{ currencies.date }}</p>
+      <p></p>
+      <ul>
+        <!-- <li v-for="(value, name) in currencies"> -->
+        <li v-for="(value, name) in currencies.rates">
+          {{ name }}: {{ value }}
+        </li>
+      </ul>
 
     </div>
   </body>
