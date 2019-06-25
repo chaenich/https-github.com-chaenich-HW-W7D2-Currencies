@@ -14,13 +14,28 @@
       <p>Base Currency: {{ currencies.base }}</p>
       <p>Active date: {{ currencies.date }}</p>
       <p></p>
+      <div class="conversion">
+        <label for="euro-amt">Euros: </label>
+        <input type="number" id="euro-amt">
+        <p></p>
+        <label for="currency-select">Select conversion Currency: </label>
+        <select id="currency-select" v-model="conversionCurrency">
+        	<option disabled value="">Select a currency</option>
+		      <option v-for="(name, value) in currencies.rates">{{ value }}</option>
+      	</select>
+        <p></p>
+        <label>Current Rate:  </label>
+        <input type="number" disabled v-model="conversionRate" value="assignConversionRate">
+        <p></p>
+        <label for="conversion-amt">Qty Conversion currency: </label>
+        <input type="number" id="conversion-amt">
+      </div>
+      <h4>Complete Listing</h4>
       <ul>
-        <!-- <li v-for="(value, name) in currencies"> -->
         <li v-for="(value, name) in currencies.rates">
           {{ name }}: {{ value }}
         </li>
       </ul>
-
     </div>
   </body>
 </html>
