@@ -16,7 +16,7 @@
       <p></p>
       <div class="conversion">
         <label for="euro-amt">Euros: </label>
-        <input type="number" id="euro-amt">
+        <input type="number" id="euro-amt" v-model="euroAmt">
         <p></p>
         <label for="currency-select">Select conversion Currency: </label>
         <select id="currency-select" v-model="conversionCurrency">
@@ -25,10 +25,10 @@
       	</select>
         <p></p>
         <label>Current Rate:  </label>
-        <input type="number" disabled v-model="conversionRate" value="assignConversionRate">
-        <p></p>
+        <input type="number" disabled v-model="conversionRate">
+        <p>{{ "assignConversionRate" }}</p>
         <label for="conversion-amt">Qty Conversion currency: </label>
-        <input type="number" id="conversion-amt">
+        <input type="number" id="conversion-amt" v-model="convAmt">
       </div>
       <h4>Complete Listing</h4>
       <ul>
